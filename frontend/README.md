@@ -5,6 +5,22 @@
 - Initialized React Project
 - Setting up the backend on port 5001
 
+# DB
+- We'll split the data base
+- One for users
+ - email
+ - fullName
+ - password
+ - profilepic
+- One for messages
+ - senderId
+ - recieverId
+ - text
+ - image
+- Also we'll add timestaps
+ - createdAt
+ - updatedAt
+
 # Tech Stack
 
 - HTML/CSS

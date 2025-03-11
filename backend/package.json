@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev":"nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "LSR_ASUS",
@@ -18,6 +18,7 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.14.2",
+    "mongoose": "^8.12.1",
     "nodemon": "^3.1.9",
     "socket.io": "^4.8.1"
   }
