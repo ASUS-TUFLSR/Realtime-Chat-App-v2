@@ -7,6 +7,10 @@ export const signup = async (req, res) => {
     const {fullName, email, password} = req.body
     try {
         // hash passwords
+        if(!fullName || !email || !password){
+           return res.status(400).json({message: "Kindly fill all details"});
+        }
+        
         if(password.length < 6){
             return res.status(400).json({message: "Password must be atleast 6 characters"});
         }
@@ -46,9 +50,39 @@ export const signup = async (req, res) => {
     }
 }
 
-export const login = (req, res) => {
-    res.send("login Route");
+export const login = async (req, res) => {
+       
+       const {email, password} = req.body
+
+       try {
+        const user = await User.findOne({email})
+        if(!user){
+            res.status(400).json({message: "Invalid credentials"});
+        }
+
+        const isPasswordCorrect = await bcrypt.compare(password, user.password)
+         if(!isPasswordCorrect){
+            res.status(400).json({message: "Invalid credentials"});
+        }
+
+        generateToken(user._id, res)
+        res.status(200).json({
+            _id:user._id,
+            fullName:user.fullName,
+            email:user.email,
+            profilePic:user.profilePic
+        })
+       } catch (error) {
+        console.log("Error in login controller", error.message);
+        res.status(500).json({message: "Internal Server Error"})
+       }
 }
 export const logout = (req, res) => {
-    res.send("logout Route");
+       try {
+        res.cookie("jwt", "", {maxAge:0})
+        res.status(200).json({message: "Logged out sucessfully"})
+       } catch (error) {
+         console.log("Error in logout controller", error.message);
+         res.status(500).json({message:"Internal server error"})
+       }
 }
