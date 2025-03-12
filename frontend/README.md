@@ -4,6 +4,9 @@
 
 - Initialized React Project
 - Setting up the backend on port 5001
+- Created mongoose model schema for user
+- Created signUp auth in authController using bcrypt and jwt for user auth
+- Created our first user in db through postman
 
 # DB
 - We'll split the data base
@@ -20,6 +23,7 @@
 - Also we'll add timestaps
  - createdAt
  - updatedAt
+
 
 # Tech Stack
 
