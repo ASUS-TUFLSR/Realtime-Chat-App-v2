@@ -10,7 +10,7 @@
 - Created login and logout auth sucessfully with error handling
 - Initialized cloudinary which will help update user profilePic
 - Created update route and protect middleware which will let only auth user update their profile
-- 
+- Created Message routes and controllers to send and recieve texts and images
 
 
 # DB
