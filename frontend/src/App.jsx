@@ -8,9 +8,9 @@ import SettingScreen from './screen/SettingScreen'
 import ProfileScreen from './screen/ProfileScreen'
 
 const App = () => {
+  
   return (
     <div>
-      
     <Navbar/>
     <Routes>
       <Route path='/' element={<HomeScreen/>} /> 
