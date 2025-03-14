@@ -11,30 +11,31 @@
 - Initialized cloudinary which will help update user profilePic
 - Created update route and protect middleware which will let only auth user update their profile
 - Created Message routes and controllers to send and recieve texts and images
-
+- Configured TailwindCSS in our chat app and Daisy UI
 
 # DB
+
 - We'll split the data base
 - One for users
- - email
- - fullName
- - password
- - profilepic
+- email
+- fullName
+- password
+- profilepic
 - One for messages
- - senderId
- - recieverId
- - text
- - image
+- senderId
+- recieverId
+- text
+- image
 - Also we'll add timestaps
- - createdAt
- - updatedAt
-
+- createdAt
+- updatedAt
 
 # Tech Stack
 
 - HTML/CSS
 - TAILWIND CSS
 - REACT JS
+- DAISY UI
 - ZUSTAND
 - NODEJS
 - EXPRESSJS
