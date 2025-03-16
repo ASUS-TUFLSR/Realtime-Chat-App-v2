@@ -8,6 +8,7 @@ import SettingScreen from './screen/SettingScreen'
 import ProfileScreen from './screen/ProfileScreen'
 import { useAuthStore } from './store/useAuthStore'
 import {Loader} from 'lucide-react'
+import {Toaster} from 'react-hot-toast'
 
 const App = () => {
   
@@ -17,7 +18,6 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  console.log({authUser})
 
   if(isCheckingAuth && !authUser) return(
      <div className='flex items-center justify-center h-screen' >
@@ -35,6 +35,9 @@ const App = () => {
       <Route path='/settings' element={<SettingScreen/>} /> 
       <Route path='/profile' element={ authUser ? <ProfileScreen/> : <Navigate to='/login'/>} /> 
     </Routes>
+
+    <Toaster/>
+
     </div>
   )
 }
