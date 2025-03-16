@@ -15,6 +15,7 @@ const PORT = process.env.PORT
 
 app.use(express.json()); // here express.json will help extract data from the body 
 app.use(cookieParser());
+
 app.use(cors({
    origin:"http://localhost:5173",
    credentials: true
