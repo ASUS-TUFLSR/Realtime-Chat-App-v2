@@ -12,6 +12,8 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.13",
     "axios": "^1.8.3",
+    "browser-image-compression": "^2.0.2",
+    "canvas": "^3.1.0",
     "lucide-react": "^0.482.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
