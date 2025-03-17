@@ -89,41 +89,30 @@ export const logout = (req, res) => {
 }
 
 export const updateProfile = async (req, res) => {
-        try {
-        const { profilePic } = req.body; // Get Base64 image
+    try {
+        const { profilePic } = req.body;
         const userId = req.user._id;
 
         if (!profilePic) {
             return res.status(400).json({ message: "Profile pic is required!" });
         }
 
-        console.log("Received Image Length:", profilePic.length); // Debugging
-
-        // 🔥 Upload image to Cloudinary
+        // ✅ Upload to Cloudinary
         const uploadResponse = await cloudinary.uploader.upload(profilePic, {
-            folder: "profile_pictures",
-            resource_type: "image", // Ensure it's treated as an image
+            folder: "chat-app", // Organize inside a folder (optional)
+            transformation: [{ width: 300, height: 300, crop: "limit" }] // Limit size
         });
 
-        console.log("Cloudinary Upload Success:", uploadResponse.secure_url); // Debugging
-
-        // 🔥 Update user in the database
+        // ✅ Update User Profile Pic in Database
         const updatedUser = await User.findByIdAndUpdate(
             userId,
             { profilePic: uploadResponse.secure_url },
             { new: true }
         );
 
-        if (!updatedUser) {
-            return res.status(404).json({ message: "User not found!" });
-        }
-
-        console.log("Database Update Success:", updatedUser); // Debugging
-
-        res.status(200).json({ message: "Profile updated!", user: updatedUser });
-
+        res.status(200).json(updatedUser);
     } catch (error) {
-        console.error("Error in update profile:", error);
+        console.log("Error in update profile:", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
 }
