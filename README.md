@@ -12,9 +12,12 @@
 - Created update route and protect middleware which will let only auth user update their profile
 - Created Message routes and controllers to send and recieve texts and images
 - Configured TailwindCSS in our chat app and Daisy UI
-- Initialized Zustand for state management and create a store=>useAuthStore file 
+- Initialized Zustand for state management and create a store=>useAuthStore file
 - Added conditional stats for routes so only authenticate users will have access
 - Installed Cors to handle cors issue which will allow to fetch data from backend
+- In profileScreen added a hook that will first compress the image the upload it
+- Using cloudinary to store our profile images
+- Configured Daisy Ui for themes
 
 # DB
 
