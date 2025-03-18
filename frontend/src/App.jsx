@@ -26,7 +26,7 @@ const App = () => {
   );
 
   return (
-    <div data-theme="cupcake" >
+    <div data-theme="retro" >
     <Navbar/>
     <Routes>
       <Route path='/' element={ authUser ? <HomeScreen/> : <Navigate to='/login'/>} /> 
