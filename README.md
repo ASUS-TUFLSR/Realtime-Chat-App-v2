@@ -18,6 +18,10 @@
 - In profileScreen added a hook that will first compress the image the upload it
 - Using cloudinary to store our profile images
 - Configured Daisy Ui for themes
+- Created Chat container for home screen which displays users
+- Created useChatStore for getting & sending messages
+- Created some skeleton ui's
+- Fixed some minor issue which were causing issues
 
 # DB
 
