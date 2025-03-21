@@ -22,6 +22,8 @@
 - Created useChatStore for getting & sending messages
 - Created some skeleton ui's
 - Fixed some minor issue which were causing issues
+- Chat container working 
+- Implementing Socket.io for rtf
 
 # DB
 
