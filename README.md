@@ -24,6 +24,8 @@
 - Fixed some minor issue which were causing issues
 - Chat container working 
 - Implementing Socket.io for rtf
+- Created socketjs file in backend which will handle rtf
+- Implemented connectSocket and disconnectSocket which tells which user is currently logged in the authStore and Whispr
 
 # DB
 
