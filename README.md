@@ -26,6 +26,7 @@
 - Implementing Socket.io for rtf
 - Created socketjs file in backend which will handle rtf
 - Implemented connectSocket and disconnectSocket which tells which user is currently logged in the authStore and Whispr
+- Getting the users online by indicating a green icon when user get's online
 
 # DB
 
