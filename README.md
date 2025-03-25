@@ -31,6 +31,8 @@
 - Added a filter to display online users
 - Added a auto scroll feature on new messages
 - Optimized subscribeToMessage to only send message to selected Users
+- Deployed the app on render!!!
+- will add some updates as needed
 
 # DB
 
