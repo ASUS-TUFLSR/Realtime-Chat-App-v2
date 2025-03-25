@@ -111,5 +111,7 @@ const seedDatabase = async () => {
   }
 };
 
+
+
 // Calling the function
 seedDatabase();
