@@ -27,6 +27,10 @@
 - Created socketjs file in backend which will handle rtf
 - Implemented connectSocket and disconnectSocket which tells which user is currently logged in the authStore and Whispr
 - Getting the users online by indicating a green icon when user get's online
+- Created dummy users to show
+- Added a filter to display online users
+- Added a auto scroll feature on new messages
+- Optimized subscribeToMessage to only send message to selected Users
 
 # DB
 

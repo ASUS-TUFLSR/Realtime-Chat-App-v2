@@ -52,8 +52,12 @@ export const useChatStore = create((set, get) => ({
     if(!selectedUser) return;
 
     const socket = useAuthStore.getState().socket
-// some optimization is needed 
+
+    
     socket.on("newMessage", (newMessage) => {
+      const onlySendMessageToSelectedUser = newMessage.senderId === selectedUser._id;
+      // with the code of above line we are only sending text to selected user and not any diff user
+      if(!onlySendMessageToSelectedUser) return;
       set({
         messages: [...get().messages, newMessage],
       })
@@ -67,6 +71,5 @@ export const useChatStore = create((set, get) => ({
     socket.off("newMessage");
   },
 
-    // optimizie this one
   setSelectedUser: (selectedUser) => set({ selectedUser }),
 }))
